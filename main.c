@@ -9,7 +9,7 @@ void main()
 {
 	EA=0;
 	
-	Init_Device(); //on initialise les ports, le Sysclock et le reset
+	Init_Device(); //on initialise les ports, le Sysclock et le reset dvdnvidnidnsinsdz
 	Gestion_GPIO();
 	//Init_PCA(); //on initialise le PCA
 	Config_SPI();
