@@ -1,0 +1,18 @@
+char putcharSPI(char c, char csg_tempo) {
+	NSS=1;
+	nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();
+	while(1){
+	if ((SPIF==1 )){
+		NSS=1;	
+		SPIF=0;
+		NSS=0;
+		SPI0DAT = c; 
+				
+	
+		}
+		else{ //si drapeau pas pret a transmettre
+			
+		}
+}
+	return c;
+

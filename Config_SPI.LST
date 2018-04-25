@@ -1,0 +1,81 @@
+C51 COMPILER V9.52.0.0   CONFIG_SPI                                                        04/25/2018 12:06:16 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE CONFIG_SPI
+OBJECT MODULE PLACED IN Config_SPI.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Config_SPI.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <c8051f020.h>
+   2          #include "Config_SPI.h"
+   3          #include "intrins.h"
+   4          #include "string.h"
+   5          
+   6          //Define_port
+   7          sbit NSS=P3^7;
+   8          
+   9          void Config_SPI(void){
+  10   1        
+  11   1        SPI0CFG=0x87; 
+  12   1        SPI0CN=0x03;
+  13   1        SPI0CKR=0x36; //pour avoir fSCK = 200 kHz
+  14   1        SPIF=1;
+  15   1      }
+  16          
+  17          
+  18          
+  19          
+  20            
+  21          char putcharSPI(char c, char csg_tempo) {
+  22   1        while (csg_tempo != 0) //while tant que csg_tempo n'est pas arrivé a 0
+  23   1          {
+  24   2          if ((SPIF==1 )){
+  25   3            NSS=0;
+  26   3            SPIF=0;
+  27   3            SPI0DAT = c;
+  28   3            while(TXBSY);
+  29   3            NSS=1;
+  30   3            return c; 
+  31   3          }
+  32   2          else{ //si drapeau pas pret a transmettre
+  33   3            //  _nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();
+  34   3              csg_tempo-- ; //decrementation de csg_tempo
+  35   3              
+  36   3          }
+  37   2        }
+  38   1            
+  39   1        return 0;
+  40   1      }
+  41          
+  42          void test (void){
+  43   1        int j;
+  44   1      
+  45   1        char chaineenvoyee[] = "Salut Nicolas";
+  46   1        char chaine[30] = "$$";
+  47   1        char octetFin[] ="@@";
+  48   1        //putcharSPI('e',500);
+  49   1        
+  50   1        strcat(chaine,chaineenvoyee);
+  51   1        strcat(chaine,octetFin);
+  52   1        
+  53   1        for (j=0;j<strlen(chaine);j++){
+  54   2          putcharSPI(chaine[j],500);
+  55   2      }
+C51 COMPILER V9.52.0.0   CONFIG_SPI                                                        04/25/2018 12:06:16 PAGE 2   
+
+  56   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    181    ----
+   CONSTANT SIZE    =     47    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      49
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
