@@ -1,7 +1,7 @@
 "STARTUP.obj",
-".\Config_Global.obj",
-".\Config_GPIO.obj",
 ".\main.obj",
-"Config_SPI.obj" 
+"Config_SPI.obj",
+"Config_GPIO.obj",
+"Config_Global.obj" 
 TO "projetTR_SPI" 
 RAMSIZE(256) 

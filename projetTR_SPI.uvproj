@@ -357,24 +357,9 @@
               <FilePath>.\STARTUP.A51</FilePath>
             </File>
             <File>
-              <FileName>Config_Global.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\projetTR_ServoH\Config_Global.h</FilePath>
-            </File>
-            <File>
               <FileName>Config_GPIO.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\projetTR_ServoH\Config_GPIO.h</FilePath>
-            </File>
-            <File>
-              <FileName>Config_Global.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\projetTR_ServoH\Config_Global.c</FilePath>
-            </File>
-            <File>
-              <FileName>Config_GPIO.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\projetTR_ServoH\Config_GPIO.c</FilePath>
             </File>
             <File>
               <FileName>main.c</FileName>
@@ -385,6 +370,21 @@
               <FileName>Config_SPI.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Config_SPI.c</FilePath>
+            </File>
+            <File>
+              <FileName>Config_GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Config_GPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>Config_Global.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Config_Global.c</FilePath>
+            </File>
+            <File>
+              <FileName>Config_Global.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Config_Global.h</FilePath>
             </File>
           </Files>
         </Group>

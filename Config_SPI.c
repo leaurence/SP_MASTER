@@ -14,10 +14,6 @@ void Config_SPI(void){
 	SPIF=1;
 }
 
-
-
-
-	
 char putcharSPI(char c, char csg_tempo) {
 	while (csg_tempo != 0) //while tant que csg_tempo n'est pas arrivé a 0
 		{

@@ -1,9 +1,9 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        04/25/2018  12:06:16  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/02/2018  11:22:22  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, .\Config_Global.obj, .\Config_GPIO.obj, .\main.obj, Config_SPI.obj TO projetTR_SPI
->>  RAMSIZE (256)
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, .\main.obj, Config_SPI.obj, Config_GPIO.obj, Config_Global.obj TO projetTR_SPI RAM
+>> SIZE (256)
 
 
 MEMORY MODEL: SMALL
@@ -11,10 +11,10 @@ MEMORY MODEL: SMALL
 
 INPUT MODULES INCLUDED:
   STARTUP.obj (?C_STARTUP)
-  .\Config_Global.obj (CONFIG_GLOBAL)
-  .\Config_GPIO.obj (CONFIG_GPIO)
   .\main.obj (MAIN)
   Config_SPI.obj (CONFIG_SPI)
+  Config_GPIO.obj (CONFIG_GPIO)
+  Config_Global.obj (CONFIG_GLOBAL)
   C:\KEIL\C51\LIB\C51S.LIB (?C?COPY)
   C:\KEIL\C51\LIB\C51S.LIB (STRCAT)
   C:\KEIL\C51\LIB\C51S.LIB (STRLEN)
@@ -59,7 +59,7 @@ SEGMENT                                        DATA_GROUP
   +--> CALLED SEGMENT                        START    LENGTH
 ------------------------------------------------------------
 ?C_C51STARTUP                                -----    -----
-BL51 BANKED LINKER/LOCATER V6.22                                                      04/25/2018  12:06:16  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/02/2018  11:22:22  PAGE 2
 
 
   +--> ?PR?MAIN?MAIN
@@ -119,7 +119,7 @@ SYMBOL TABLE OF MODULE:  projetTR_SPI (?C_STARTUP)
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
   C:02C3H         LINE#         133
-BL51 BANKED LINKER/LOCATER V6.22                                                      04/25/2018  12:06:16  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/02/2018  11:22:22  PAGE 3
 
 
   C:02C5H         LINE#         134
@@ -129,57 +129,117 @@ SYMBOL TABLE OF MODULE:  projetTR_SPI (?C_STARTUP)
   C:02CCH         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
-  -------         MODULE        CONFIG_GLOBAL
+  -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
-  D:00FFH         PUBLIC        WDTCN
   B:00A8H.7       PUBLIC        EA
   D:00E8H         PUBLIC        ADC0CN
   D:00A8H         PUBLIC        IE
   D:00D8H         PUBLIC        PCA0CN
   D:00B8H         PUBLIC        IP
   D:00C0H         PUBLIC        SMB0CN
+  C:023CH         PUBLIC        main
   D:00F8H         PUBLIC        SPI0CN
   D:0088H         PUBLIC        TCON
-  D:00B2H         PUBLIC        OSCICN
-  C:02E4H         PUBLIC        Init_Device
-  D:00B1H         PUBLIC        OSCXCN
-  C:0263H         PUBLIC        oscillator_init
   D:0098H         PUBLIC        SCON0
-  C:02DBH         PUBLIC        Reset_Sources_init
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
-  -------         PROC          OSCILLATOR_INIT
+  -------         PROC          MAIN
   -------         DO            
-  D:0006H         SYMBOL        i
+  D:0008H         SYMBOL        i
   -------         ENDDO         
-  C:0263H         LINE#         5
-  C:0263H         LINE#         6
-  C:0263H         LINE#         7
-  C:0266H         LINE#         8
-  C:0269H         LINE#         9
-  C:0269H         LINE#         10
-  C:0279H         LINE#         11
-  C:027CH         LINE#         12
-  -------         ENDPROC       OSCILLATOR_INIT
-  -------         PROC          RESET_SOURCES_INIT
-  C:02DBH         LINE#         14
-  C:02DBH         LINE#         15
-  C:02DBH         LINE#         16
-  C:02DDH         LINE#         17
-  C:02E0H         LINE#         18
-  C:02E3H         LINE#         20
-  -------         ENDPROC       RESET_SOURCES_INIT
-  -------         PROC          INIT_DEVICE
-  C:02E4H         LINE#         24
-  C:02E4H         LINE#         25
-  C:02E4H         LINE#         27
-  C:02E7H         LINE#         28
-  -------         ENDPROC       INIT_DEVICE
-  -------         ENDMOD        CONFIG_GLOBAL
+  C:023CH         LINE#         7
+  C:023CH         LINE#         8
+  C:023CH         LINE#         9
+  C:023EH         LINE#         11
+  C:0241H         LINE#         12
+  C:0244H         LINE#         14
+  C:0247H         LINE#         16
+  C:0249H         LINE#         17
+  C:0249H         LINE#         22
+  C:024CH         LINE#         23
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        CONFIG_SPI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:009DH         PUBLIC        SPI0CKR
+  D:00B0H         PUBLIC        P3
+  D:00E8H         PUBLIC        ADC0CN
+  D:00A8H         PUBLIC        IE
+  D:00D8H         PUBLIC        PCA0CN
+  D:00B8H         PUBLIC        IP
+  B:00F8H.3       PUBLIC        TXBSY
+  D:00C0H         PUBLIC        SMB0CN
+  C:02CFH         PUBLIC        Config_SPI
+  D:00F8H         PUBLIC        SPI0CN
+  B:00F8H.7       PUBLIC        SPIF
+  D:0088H         PUBLIC        TCON
+  C:0124H         PUBLIC        test
+  C:020DH         SYMBOL        _?ix1000
+  C:021BH         SYMBOL        _?ix1001
+  C:0239H         SYMBOL        _?ix1002
+  D:0098H         PUBLIC        SCON0
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/02/2018  11:22:22  PAGE 4
+
+
+  D:00C8H         PUBLIC        T2CON
+  C:0296H         PUBLIC        _putcharSPI
+  D:009AH         PUBLIC        SPI0CFG
+  B:00B0H.7       PUBLIC        NSS
+  D:009BH         PUBLIC        SPI0DAT
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          CONFIG_SPI
+  C:02CFH         LINE#         9
+  C:02CFH         LINE#         11
+  C:02D2H         LINE#         12
+  C:02D5H         LINE#         13
+  C:02D8H         LINE#         14
+  C:02DAH         LINE#         15
+  -------         ENDPROC       CONFIG_SPI
+  -------         PROC          _PUTCHARSPI
+  D:0007H         SYMBOL        c
+  D:0005H         SYMBOL        csg_tempo
+  C:0296H         LINE#         17
+  C:0296H         LINE#         18
+  C:0299H         LINE#         19
+  C:0299H         LINE#         20
+  C:029CH         LINE#         21
+  C:029EH         LINE#         22
+  C:02A0H         LINE#         23
+  C:02A2H         LINE#         24
+  C:02A5H         LINE#         25
+  C:02A7H         LINE#         26
+  C:02A8H         LINE#         27
+  C:02A8H         LINE#         28
+  C:02A8H         LINE#         30
+  C:02A9H         LINE#         32
+  C:02A9H         LINE#         33
+  C:02ABH         LINE#         35
+  C:02ADH         LINE#         36
+  -------         ENDPROC       _PUTCHARSPI
+  -------         PROC          TEST
+  -------         DO            
+  D:000AH         SYMBOL        j
+  D:000CH         SYMBOL        chaineenvoyee
+  D:001AH         SYMBOL        chaine
+  D:0038H         SYMBOL        octetFin
+  -------         ENDDO         
+  C:0124H         LINE#         38
+  C:0124H         LINE#         41
+  C:0137H         LINE#         42
+  C:014AH         LINE#         43
+  C:015DH         LINE#         46
+  C:016FH         LINE#         47
+  C:0181H         LINE#         49
+  C:019EH         LINE#         50
+  C:01AAH         LINE#         51
+  C:01B4H         LINE#         52
+  -------         ENDPROC       TEST
+  -------         ENDMOD        CONFIG_SPI
 
   -------         MODULE        CONFIG_GPIO
   C:0000H         SYMBOL        _ICE_DUMMY_
-BL51 BANKED LINKER/LOCATER V6.22                                                      04/25/2018  12:06:16  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/02/2018  11:22:22  PAGE 5
 
 
   D:0080H         PUBLIC        P0
@@ -219,116 +279,56 @@ SYMBOL TABLE OF MODULE:  projetTR_SPI (?C_STARTUP)
   -------         ENDPROC       GESTION_GPIO
   -------         ENDMOD        CONFIG_GPIO
 
-  -------         MODULE        MAIN
+  -------         MODULE        CONFIG_GLOBAL
   C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00FFH         PUBLIC        WDTCN
   B:00A8H.7       PUBLIC        EA
   D:00E8H         PUBLIC        ADC0CN
   D:00A8H         PUBLIC        IE
   D:00D8H         PUBLIC        PCA0CN
   D:00B8H         PUBLIC        IP
   D:00C0H         PUBLIC        SMB0CN
-  C:023CH         PUBLIC        main
   D:00F8H         PUBLIC        SPI0CN
   D:0088H         PUBLIC        TCON
+  D:00B2H         PUBLIC        OSCICN
+  C:02E4H         PUBLIC        Init_Device
+  D:00B1H         PUBLIC        OSCXCN
+  C:0263H         PUBLIC        oscillator_init
   D:0098H         PUBLIC        SCON0
+  C:02DBH         PUBLIC        Reset_Sources_init
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
-  -------         PROC          MAIN
+  -------         PROC          OSCILLATOR_INIT
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/02/2018  11:22:22  PAGE 6
+
+
   -------         DO            
-  D:0008H         SYMBOL        i
+  D:0006H         SYMBOL        i
   -------         ENDDO         
-  C:023CH         LINE#         8
-  C:023CH         LINE#         9
-BL51 BANKED LINKER/LOCATER V6.22                                                      04/25/2018  12:06:16  PAGE 5
-
-
-  C:023CH         LINE#         10
-  C:023EH         LINE#         12
-  C:0241H         LINE#         13
-  C:0244H         LINE#         15
-  C:0247H         LINE#         17
-  C:0249H         LINE#         18
-  C:0249H         LINE#         23
-  C:024CH         LINE#         24
-  -------         ENDPROC       MAIN
-  -------         ENDMOD        MAIN
-
-  -------         MODULE        CONFIG_SPI
-  C:0000H         SYMBOL        _ICE_DUMMY_
-  D:009DH         PUBLIC        SPI0CKR
-  D:00B0H         PUBLIC        P3
-  D:00E8H         PUBLIC        ADC0CN
-  D:00A8H         PUBLIC        IE
-  D:00D8H         PUBLIC        PCA0CN
-  D:00B8H         PUBLIC        IP
-  B:00F8H.3       PUBLIC        TXBSY
-  D:00C0H         PUBLIC        SMB0CN
-  C:02CFH         PUBLIC        Config_SPI
-  D:00F8H         PUBLIC        SPI0CN
-  B:00F8H.7       PUBLIC        SPIF
-  D:0088H         PUBLIC        TCON
-  C:0124H         PUBLIC        test
-  C:020DH         SYMBOL        _?ix1000
-  C:021BH         SYMBOL        _?ix1001
-  C:0239H         SYMBOL        _?ix1002
-  D:0098H         PUBLIC        SCON0
-  D:00C8H         PUBLIC        T2CON
-  C:0296H         PUBLIC        _putcharSPI
-  D:009AH         PUBLIC        SPI0CFG
-  B:00B0H.7       PUBLIC        NSS
-  D:009BH         PUBLIC        SPI0DAT
-  D:00D0H         PUBLIC        PSW
-  -------         PROC          CONFIG_SPI
-  C:02CFH         LINE#         9
-  C:02CFH         LINE#         11
-  C:02D2H         LINE#         12
-  C:02D5H         LINE#         13
-  C:02D8H         LINE#         14
-  C:02DAH         LINE#         15
-  -------         ENDPROC       CONFIG_SPI
-  -------         PROC          _PUTCHARSPI
-  D:0007H         SYMBOL        c
-  D:0005H         SYMBOL        csg_tempo
-  C:0296H         LINE#         21
-  C:0296H         LINE#         22
-  C:0299H         LINE#         23
-  C:0299H         LINE#         24
-  C:029CH         LINE#         25
-  C:029EH         LINE#         26
-  C:02A0H         LINE#         27
-  C:02A2H         LINE#         28
-  C:02A5H         LINE#         29
-  C:02A7H         LINE#         30
-BL51 BANKED LINKER/LOCATER V6.22                                                      04/25/2018  12:06:16  PAGE 6
-
-
-  C:02A8H         LINE#         31
-  C:02A8H         LINE#         32
-  C:02A8H         LINE#         34
-  C:02A9H         LINE#         36
-  C:02A9H         LINE#         37
-  C:02ABH         LINE#         39
-  C:02ADH         LINE#         40
-  -------         ENDPROC       _PUTCHARSPI
-  -------         PROC          TEST
-  -------         DO            
-  D:000AH         SYMBOL        j
-  D:000CH         SYMBOL        chaineenvoyee
-  D:001AH         SYMBOL        chaine
-  D:0038H         SYMBOL        octetFin
-  -------         ENDDO         
-  C:0124H         LINE#         42
-  C:0124H         LINE#         45
-  C:0137H         LINE#         46
-  C:014AH         LINE#         47
-  C:015DH         LINE#         50
-  C:016FH         LINE#         51
-  C:0181H         LINE#         53
-  C:019EH         LINE#         54
-  C:01AAH         LINE#         55
-  C:01B4H         LINE#         56
-  -------         ENDPROC       TEST
-  -------         ENDMOD        CONFIG_SPI
+  C:0263H         LINE#         5
+  C:0263H         LINE#         6
+  C:0263H         LINE#         7
+  C:0266H         LINE#         8
+  C:0269H         LINE#         9
+  C:0269H         LINE#         10
+  C:0279H         LINE#         11
+  C:027CH         LINE#         12
+  -------         ENDPROC       OSCILLATOR_INIT
+  -------         PROC          RESET_SOURCES_INIT
+  C:02DBH         LINE#         14
+  C:02DBH         LINE#         15
+  C:02DBH         LINE#         16
+  C:02DDH         LINE#         17
+  C:02E0H         LINE#         18
+  C:02E3H         LINE#         20
+  -------         ENDPROC       RESET_SOURCES_INIT
+  -------         PROC          INIT_DEVICE
+  C:02E4H         LINE#         24
+  C:02E4H         LINE#         25
+  C:02E4H         LINE#         27
+  C:02E7H         LINE#         28
+  -------         ENDPROC       INIT_DEVICE
+  -------         ENDMOD        CONFIG_GLOBAL
 
   -------         MODULE        ?C?COPY
   C:00D3H         PUBLIC        ?C?COPY
